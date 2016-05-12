@@ -1,0 +1,28 @@
+<html ng-app="palindrome">
+
+<head>
+	<title>Palindrome</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/controllers/app.js"></script>
+</head>
+
+<body ng-controller="palindromeCtrl">
+	<div class="jumbotron">
+		<h3>Palindrome</h3>
+		
+		<input class="form-control" type="text" ng-model="todo.palindrome" placeholder="palindrome"></input>
+		
+		<button type="button" class="btn btn-info btn-block" ng-click="testPalindrome(todo)"  ng-disabled="!todo.palindrome">		Add Palindrome
+		</button>
+	
+	</div>
+		
+	<div class="result">
+		<h4>Result</h4>
+		{{resultado}}
+	</div>	
+	<div ng-include="'./view/footer.html'"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "PalindromeApp",
+  "version": "0.1.0",
+  "description": "Project TODO in AngularJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zehamarall/projectPalindrome.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "express": "~4.13.4"
+  }
+}

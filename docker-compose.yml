@@ -1,0 +1,18 @@
+version: '2'
+services:
+  serverapp:
+    build: ./server/
+    command: node /src/server.js
+    ports:
+      - "3412:3412"
+    volumes:
+      - ./server/:/src
+  web:
+    build: .
+    command: node /src/index.js
+    volumes:
+      - .:/src
+    ports:
+      - "8080:8080"
+    depends_on:
+      - serverapp
