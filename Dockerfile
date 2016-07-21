@@ -1,12 +1,14 @@
-FROM node:6.0
+FROM node:6.0-slim
+
+WORKDIR /app
 
 # Install app dependencies
-COPY package.json /src/package.json
-RUN cd /src; npm install --production
-RUN ls /src
+COPY package.json /app/package.json
+RUN npm install --production 
+RUN ls /app/node_modules
 
 # Bundle app source
-COPY . /src
+COPY . /app
 
 EXPOSE  8080
-CMD ["node", "/src/index.js"]
+CMD ["node", "/app/index.js"]

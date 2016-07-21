@@ -1,20 +1,13 @@
 # Requirements
 
 ``` install docker```
+``` install docker-compose```
 
-# Run Server (Back End) 
-
-```
-docker build -t leandro/nodeserver server/
-docker run -p 3412:3412 -d leandro/nodeserver
-```
-
-
-# Run Server (Front End) 
+# Run Containers  
 
 ```
-docker build -t leandro/nodeapp .
-docker run -p 8080:8080 -d leandro/nodeapp
+docker-compose build
+docker-compose up
 ```
 
 # Ready

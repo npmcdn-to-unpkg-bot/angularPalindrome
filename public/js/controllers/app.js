@@ -9,10 +9,10 @@ angular.module("palindrome").controller("palindromeCtrl", function ($scope, $htt
 	$scope.testPalindrome = function(todo){		
 		$http.post("http://localhost:3412/palindrome", todo)
 			.success(function (data) {
-				$scope.resultado = "is a palindrome " + data
+				$scope.resultado = "Is a palindrome " + data
 			})
 			.error(function (data, status, headers, config) {
-				$scope.resultado = "is not a palindrome " + data
+				$scope.resultado = "Is not a palindrome " + data
 			})
 	}
 });

@@ -1,17 +1,20 @@
 version: '2'
 services:
   serverapp:
-    build: ./server/
-    command: node /src/server.js
+    build: ./server
+    command: node server.js
+    volumes:
+      - ./server:/app
+      - /app/node_modules
     ports:
       - "3412:3412"
-    volumes:
-      - ./server/:/src
+    
   web:
     build: .
-    command: node /src/index.js
+    command: node index.js
     volumes:
-      - .:/src
+      - ./:/app
+      - /app/node_modules
     ports:
       - "8080:8080"
     depends_on:

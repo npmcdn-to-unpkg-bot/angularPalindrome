@@ -1,15 +1,18 @@
-FROM node:6.0
+FROM node:6.0-slim
 
 # Install app dependencies
-COPY package.json /src/package.json
-RUN  cd /src; npm install --production
+WORKDIR /app
+ADD package.json /app/package.json
+RUN npm install --production
+RUN ls /app/node_modules
 
 
 # Bundle app source
-COPY . /src
+ADD . /app
+
 
 #execute test
-RUN cd /src; npm test
+RUN cd /app; npm test
 
 EXPOSE  3412
-CMD ["node", "/src/server.js"]
+CMD ["node", "/app/server.js"]
